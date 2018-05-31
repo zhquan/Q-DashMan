@@ -3,8 +3,14 @@ Generating dashboard the simple way using GrimoireLab tools in a Django app.
 
 # Installation
 `$ git clone https://github.com/zhquan/Q-DashMan.git`
+
 `$ cd Q-DashMan`
+
 `$ python3 manage.py runserver`
+
+`$ python3  manage.py migrate`
+
+`$ python3 manage.py makemigrations`
 
 # Docker containers
 You need a ElasticSearch, Kibana, and MariaDB running in a docker container.
@@ -65,6 +71,8 @@ mariadb:
 
 ### Mordred
 Remember the path of this docker-compose.yml
+<mordred_conf_path>: The same path as docker-compose.yml
+<mordred_logs_path>: <mordred_conf_path>/logs
 
 docker-compose.yml
 ```
@@ -75,8 +83,8 @@ mordred:
   restart: on-failure:5
   image: bitergia/mordred:18.05-03
   volumes:
-    - /home/bitergia/URJC/github/mordred-tfm:/home/bitergia/conf
-    - /home/bitergia/URJC/github/mordred-tfm/logs:/home/bitergia/logs
+    - <mordred_conf_path>:/home/bitergia/conf
+    - <mordred_logs_path>:/home/bitergia/logs
   links:
     - redis
   external_links:
@@ -92,8 +100,11 @@ mordred:
 # Modify `models.py`
 When you modify the `module.py` file, you have to delete the old database and create a new one.
 `$ python3 rm db.sqlite3`
+
 `$ python3 manage.py migrate`
+
 `$ python3 manage.py makemigrations`
+
 `$ python3 manage.py createsuperuser`
 
 # License
