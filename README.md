@@ -71,6 +71,7 @@ mariadb:
 
 ### Mordred
 Remember the path of this docker-compose.yml
+
 <mordred_conf_path>: The same path as docker-compose.yml
 <mordred_logs_path>: <mordred_conf_path>/logs
 
