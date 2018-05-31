@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+	<title>QZ</title>
+
+	<!-- Bootstrap -->
+	<link type="text/css" rel="stylesheet" href="static/css/bootstrap.min.css" />
+
+	<!-- Font Awesome Icon -->
+	<link rel="stylesheet" href="static/css/font-awesome.min.css">
+
+	<!-- Custom stlylesheet -->
+    <link type="text/css" rel="stylesheet" href="static/css/style.css" />
+    <link type="text/css" rel="stylesheet" href="static/css/index.css" />
+
+</head>
+
+<body>
+	<!-- Header -->
+	<header id="home">
+		<!-- Background Image -->
+		<div class="bg-img" style="background-image: url('./static/img/background1.jpg');">
+			<div class="overlay"></div>
+		</div>
+		<!-- /Background Image -->
+
+		<!-- Nav -->
+		<nav id="nav" class="navbar nav-transparent">
+			<div class="container">
+
+				<div class="navbar-header">
+					<!-- Collapse nav button -->
+					<div class="nav-collapse">
+						<span></span>
+					</div>
+					<!-- /Collapse nav button -->
+				</div>
+
+				<!--  Main navigation  -->
+				<ul class="main-nav nav navbar-nav navbar-right">
+					<li><a href="#home">Home</a></li>
+                    <li><a href="#configuration">Configuration</a></li>
+                    <li><a href="#contact">Contact</a></li>
+					<li><a href="http://localhost:9200/">ElasticSearch</a></li>
+					<li><a href="http://localhost:5601/">Kibana</a></li>
+				</ul>
+				<!-- /Main navigation -->
+
+			</div>
+		</nav>
+		<!-- /Nav -->
+
+		<!-- home wrapper -->
+		<div class="home-wrapper">
+			<div class="container">
+				<div class="row">
+
+					<!-- home content -->
+					<div class="col-md-10 col-md-offset-1">
+						<div class="home-content">
+                            <h2 class="white-text">Create a software development analytics dashboard for your projects!</h2>
+                            <p class="white-text">
+                                Using GrimoireLab tools, developed by <a href="http://www.bitergia.com">Biteregia</a>
+                            </p>
+
+							<div class="row home-content">
+								<div class="big-title text-center">
+								  <h3 class="white-text">Supported Tools</h3>
+								</div>
+							  
+								<div class="row">
+							  
+								  <div class="col-md-3">
+									<div style="font-size:2em;">
+									  <i class="fa fa-code"></i>
+									</div>
+									<div class="service-content">
+									  <h3 class="white-text">Source Code</h3>
+									  <p>Git</p>
+									</div>
+								  </div>
+							  
+								  <div class="col-md-3">
+									<div style="font-size:2em;">
+									  <i class="fa fa-bug"></i>
+									</div>
+									<div class="service-content">
+									  <h3 class="white-text">Tickets / issues</h3>
+									  <p>Bugzilla, GitHub Issues, JIRA, Phabricator Maniphest</p>
+									</div>
+								  </div>
+							  
+								  <div class="col-md-3">
+									<div style="font-size:2em;">
+									  <i class="fa fa-code-fork"></i>
+									</div>
+									<div class="service-content">
+									  <h3 class="white-text">Code Review</h3>
+									  <p>Gerrit, GitHub Pull Requests</p>
+									</div>
+								  </div>
+							  
+								  <div class="col-md-3">
+									<div style="font-size:2em;">
+									  <i class="fa fa-gears"></i>
+									</div>
+									<div class="service-content">
+									  <h3 class="white-text">Continuous Integration</h3>
+									  <p>Jenkins</p>
+									</div>
+								  </div>
+							  
+								</div>
+							  
+								<div class="row">
+							  
+								  <div class="col-md-3">
+									<div style="font-size:2em;">
+									  <i class="fa fa-envelope-o"></i>
+									</div>
+									<div class="service-content">
+									  <h3 class="white-text">Mailing lists / Forums</h3>
+									  <p>Askbot, Discourse, Pipermail, Stack Exchange</p>
+									</div>
+								  </div>
+							  
+								  <div class="col-md-3">
+									<div style="font-size:2em;">
+									  <i class="fa fa-comments-o"></i>
+									</div>
+									<div class="service-content">
+									  <h3 class="white-text">Chat</h3>
+									  <p>Slack</p>
+									</div>
+								  </div>
+							  
+								  <div class="col-md-3">
+									<div style="font-size:2em;">
+									  <i class="fa fa-file-text-o"></i>
+									</div>
+									<div class="service-content">
+									  <h3 class="white-text">Wiki</h3>
+									  <p>Confluence, MediaWiki</p>
+									</div>
+								  </div>
+
+								  <div class="col-md-3">
+									<div style="font-size:2em;">
+									  <i class="fa fa-users"></i>
+									</div>
+									<div class="service-content">
+									  <h3 class="white-text">Meetings</h3>
+									  <p>Meetup</p>
+									</div>
+								  </div>
+							  
+								</div>
+							  
+							  </div>
+							  <button class="white-btn"><a href="#configuration" style="color:currentColor">Get Started!</a></button> 
+						</div>
+					</div>
+					<!-- /home content -->
+
+				</div>
+			</div>
+		</div>
+		<!-- /home wrapper -->
+
+	</header>
+	<!-- /Header -->
+
+	<!-- configuration -->
+	<div id="configuration" class="section md-padding">
+
+		<!-- Container -->
+		<div class="container">
+
+			<!-- Row -->
+			<div class="row">
+
+				<!-- Section header -->
+				<div class="section-header text-center">
+					<h2 class="title">Configurations</h2>
+				</div>
+				<!-- /Section header -->
+
+				<!-- setup.cfg -->
+				<div class="col-md-4">
+					<div class="about">
+						<i class="fa fa-cogs"></i>
+						<h3>Mordred setup</h3>
+						<button class="white-btn" data-toggle="modal" data-target="#setup_settings">Settings</button>
+                        <button class="white-btn" data-toggle="modal" data-target="#setup_add_ds">Add Data Source</button>
+                        <button class="white-btn" data-toggle="modal" data-target="#setup_rm_ds">Remove Data Ssource</button>
+                        <button class="white-btn" data-toggle="modal" data-target="#setup_import">Import</button>
+                        <button class="white-btn" data-toggle="modal" data-target="#setup_show">Show</button>
+					</div>
+				</div>
+                
+                <!-- setup_settings -->
+				<div class="modal fade" id="setup_settings" tabindex="-1" role="dialog" aria-labelledby="setup_settingsLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="setup_settingsLabel">General Settings</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form id="conf_setup" action="/conf_setup" method="post" enctype="multipart/form-data" align="left">
+                                    {% csrf_token %}
+                                    {{setup_form|safe}}
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="submit" form="conf_setup" class="btn btn-primary">Save changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /setup_settings -->
+                
+                <!-- setup_add_ds -->
+				<div class="modal fade" id="setup_add_ds" tabindex="-1" role="dialog" aria-labelledby="setup_add_dsLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="setup_add_dsLabel">Add Data Source</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="conf_backend" action="/conf_backend" method="post" enctype="multipart/form-data" align="left">
+                                {% csrf_token %}
+                                <div class ="form-group">
+                                    <label> Select Data Source</label>
+                                    <select class ="form-control" name="s_data_source">'
+                                        {{data_sources|safe}}
+                                    </select>
+                                </div>
+                                <input id="s_raw_index" type="text" name="s_raw_index" placeholder="Raw Index *" required="required">
+                                <input id="s_enriched_index" type="text" name="s_enriched_index" placeholder="Enriched Index *" required="required">
+                                <input id="s_no_archive" type="text" name="s_no_archive" placeholder="No Archive">
+                                <input id="s_api_token" type="text" name="s_api_token" placeholder="Api Token">
+                                <input id="s_sleep_time" type="text" name="s_sleep_time" placeholder="Sleep Time">
+                                <input id="s_sleep_for_rate" type="text" name="s_sleep_for_rate" placeholder="Sleep For Rate">
+                                <input id="s_studies" type="text" name="s_studies" placeholder="Studies">
+                                <input id="s_latest_items" type="text" name="s_latest_items" placeholder="Latest Items">
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="submit" form="conf_backend" class="btn btn-primary">Add</button>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /setup_add_ds -->
+
+                <!-- setup_rm_ds -->
+				<div class="modal fade" id="setup_rm_ds" tabindex="-1" role="dialog" aria-labelledby="setup_rm_dsLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="setup_rm_dsLabel">Remove Data Source</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="rm_backend" action="/rm_backend" method="post" enctype="multipart/form-data" align="left">
+                                {% csrf_token %}
+                                {{rm_backend|safe}}
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="submit" form="rm_backend" class="btn btn-primary">Remove</button>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /setup_rm_ds -->
+                
+                <!-- setup_show -->
+                <div class="modal fade" id="setup_show" tabindex="-1" role="dialog" aria-labelledby="setup_showLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="setup_showLabel">setup.cfg</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <pre>{{setup_cfg|safe}}</pre>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /setup_show -->
+
+                <!-- setup_import -->
+				<div class="modal fade" id="setup_import" tabindex="-1" role="dialog" aria-labelledby="setup_importLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="setup_importLabel">Import setup.cfg</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="up_setup" action="/upload_setup" method="post" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <input type="file" name="setup" required="required">
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="submit" form="up_setup" class="btn btn-primary">Upload</button>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /setup_import -->
+
+                <!-- /setup.cfg -->
+
+				<!-- generate dashboard -->
+				<div class="col-md-4">
+					<div class="about">
+						<i class="fa fa-magic"></i>
+						<h3>Generate Dashboard</h3>
+                        <p>
+                            When you have finished configuring Mordred set up and projects file.<br>
+                            You are ready to generate the dashboard.
+                        </p>
+                        <p>
+                            If you want to change some configuration. First stop the execution click on "Stop" button
+                        </p>
+                        <button class="white-btn" data-toggle="modal" data-target="#gen_start">Start</button>
+                        <button class="white-btn" data-toggle="modal" data-target="#gen_stop">Stop</button>
+					</div>
+                </div>
+                
+                <!-- gen_start -->
+                <div class="modal fade" id="gen_start" tabindex="-1" role="dialog" aria-labelledby="gen_startLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="gen_startLabel">Generate Dashboard</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form id="gen_dash" action="/generate_dashboard" method="post" enctype="multipart/form-data" style="border: solid;">
+                                    {% csrf_token %}
+                                    <input id="gen_path_start" type="text" name="path" placeholder="Path docker-compose.yml *" required="required">
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="submit" form="gen_dash" class="btn btn-primary">Let's Go!</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /gen_start -->
+
+                <!-- gen_stop -->
+                <div class="modal fade" id="gen_stop" tabindex="-1" role="dialog" aria-labelledby="gen_stopLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="gen_stopLabel">Stop Dashboard</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form id="form_stop" action="/generate_stop" method="post" enctype="multipart/form-data" style="border: solid;">
+                                    {% csrf_token %}
+                                    <input id="gen_path_stop" type="text" name="path_stop" placeholder="Path docker-compose.yml *" required="required">
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="submit" form="form_stop" class="btn btn-primary">Stop</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /gen_start -->
+				<!-- /generate dashboard -->
+
+				<!-- projects.json -->
+				<div class="col-md-4">
+					<div class="about">
+						<i class="fa fa-cog"></i>
+						<h3>Projects file</h3>
+                        <br>
+						<button class="white-btn" data-toggle="modal" data-target="#projects_add">Add</button>
+                        <button class="white-btn" data-toggle="modal" data-target="#projects_rm">Remove</button>
+                        <button class="white-btn" data-toggle="modal" data-target="#projects_import">Import</button>
+                        <button class="white-btn" data-toggle="modal" data-target="#projects_show">Show</button>
+					</div>
+				</div>
+
+                <!-- projects_add -->
+				<div class="modal fade" id="projects_add" tabindex="-1" role="dialog" aria-labelledby="projects_addLabel" aria-hidden="true">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="projects_addLabel">Add projects.json</h5>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<div class="modal-body">
+							<form action="/add_orgs" method="post" enctype="multipart/form-data">
+								{% csrf_token %}
+								<p align="center">GitHub</p>
+                                <input id="org_name" type="text" name="org" placeholder="Organization *" required="required">
+                                <input type="text" name="github_token" placeholder="Token">
+                                <button type="submit" class="btn btn-primary">Add</button>
+							</form>
+
+                            <form action="/add_slack" method="post" enctype="multipart/form-data">
+								{% csrf_token %}
+								<p align="center">Slack</p>
+								<input id="slack_name" type="text" name="slack_org_name" placeholder="Project *" required="required">
+								<input id="slack_token" type="text" name="slack_token" placeholder="Token *" required="required">
+                                <button type="submit" class="btn btn-primary">Add</button>
+                            </form>
+                            
+                            <form action="/add_meetup" method="post" enctype="multipart/form-data">
+								{% csrf_token %}
+								<p align="center">Meetup</p>
+								<input id="meetup_name" type="text" name="meetup_org_name" placeholder="Project *" required="required">
+								<input id="meetup_topic" type="text" name="meetup_topic" placeholder="Topic *" required="required">
+                                <button type="submit" class="btn btn-primary">Add</button>
+                            </form>
+
+							<form action="/add_repo" method="post" enctype="multipart/form-data">
+								{% csrf_token %}
+								<p align="center">Manually</p>
+								<input id="org_manual" type="text" name="org_manual" placeholder="Project *" required="required">
+                                <div class ="form-group">
+                                    <label> Select Data Source</label>
+                                    <select class ="form-control" name="ds_manual">'
+                                        {{data_sources|safe}}
+                                    </select>
+                                </div>
+								<input id="ds_manual" type="text" name="ds_manual" placeholder="Data Source *" required="required">
+                                <input id="repo_manual" type="text" name="repo_manual" placeholder="Repository *" required="required">
+                                <button type="submit" class="btn btn-primary">Add</button>
+							</form>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+							
+						</div>
+						</div>
+					</div>
+                </div>
+                <!-- /projects_add -->
+
+                <!-- projects_rm -->
+				<div class="modal fade" id="projects_rm" tabindex="-1" role="dialog" aria-labelledby="projects_rmLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="projects_rmLabel">Remove projects.json</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="rm_repo" action="/rm_repo" method="post" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                {{remove_repo|safe}}
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="submit" form="rm_repo" class="btn btn-primary">Remove</button>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /projects_rm -->
+
+                <!-- projects_show -->
+                <div class="modal fade" id="projects_show" tabindex="-1" role="dialog" aria-labelledby="projects_showLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="projects_showLabel">projects.json</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <pre id="json">{{porjects_table|safe}}</pre>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /projects_show -->
+
+                <!-- projects_import -->
+				<div class="modal fade" id="projects_import" tabindex="-1" role="dialog" aria-labelledby="projects_importLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="projects_importLabel">Import projects.json</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="up_projects" action="/upload_projects" method="post" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <input type="file" name="projects" required="required">
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="submit" form="up_projects" class="btn btn-primary">Upload</button>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /projects_import -->
+
+				<!-- /projects.json -->
+
+			</div>
+			<!-- /Row -->
+
+		</div>
+		<!-- /Container -->
+
+	</div>
+	<!-- /configuration -->
+
+	<!-- Contact -->
+	<div id="contact" class="section md-padding">
+
+		<!-- Container -->
+		<div class="container">
+
+			<!-- Row -->
+			<div class="row">
+
+				<!-- Section-header -->
+				<div class="section-header text-center">
+					<h2 class="title">Get in touch</h2>
+				</div>
+				<!-- /Section-header -->
+
+				<!-- contact -->
+				<div class="col-sm-2 col-md-offset-5">
+					<div class="contact">
+						<i class="fa fa-envelope"></i>
+						<h3>Email</h3>
+						<p>zhquan7@gmail.com</p>
+					</div>
+				</div>
+				<!-- /contact -->
+
+			</div>
+			<!-- /Row -->
+
+		</div>
+		<!-- /Container -->
+
+	</div>
+	<!-- /Contact -->
+
+
+	<!-- Footer -->
+	<footer id="footer" class="sm-padding bg-dark">
+
+		<!-- Container -->
+		<div class="container">
+
+			<!-- Row -->
+			<div class="row">
+
+				<div class="col-md-12">
+
+					<!-- footer follow -->
+					<ul class="footer-follow">
+						<li><a href="https://github.com/zhquan"><i class="fa fa-github"></i></a></li>
+						<li><a href="https://www.linkedin.com/in/quan-zhou-552000aa/"><i class="fa fa-linkedin"></i></a></li>
+					</ul>
+					<!-- /footer follow -->
+
+					<!-- footer copyright -->
+					<div class="footer-copyright">
+						<p>Copyright © 2018. All Rights Reserved. Designed by Quan Zhou</p>
+					</div>
+					<!-- /footer copyright -->
+
+				</div>
+
+			</div>
+			<!-- /Row -->
+
+		</div>
+		<!-- /Container -->
+
+	</footer>
+	<!-- /Footer -->
+
+	<!-- Back to top -->
+	<div id="back-to-top"></div>
+	<!-- /Back to top -->
+
+	<!-- jQuery Plugins -->
+	<script type="text/javascript" src="static/js/jquery.min.js"></script>
+	<script type="text/javascript" src="static/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="static/js/main.js"></script>
+
+</body>
+
+</html>
