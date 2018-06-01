@@ -1,19 +1,15 @@
 # Q-DashMan
 Generating dashboard the simple way using GrimoireLab tools in a Django app.
 
-# Installation
-`$ git clone https://github.com/zhquan/Q-DashMan.git`
-
-`$ cd Q-DashMan`
-
-`$ python3 manage.py runserver`
-
-`$ python3  manage.py migrate`
-
-`$ python3 manage.py makemigrations`
+# Requirements
+* docker => 18.03.1-ce
+* docker-compose => 1.13.0
+* Django => 2.0.5
+* requests => 2.18.4
+* bs4 => 0.0.1
 
 # Docker containers
-You need a ElasticSearch, Kibana, and MariaDB running in a docker container.
+You must have an ElasticSearch, Kibana, and MariaDB running in a docker container before installing Q-DashMan.
 
 ### ElasticSearch
 docker-compose.yml
@@ -98,6 +94,18 @@ mordred:
       max-size: "100m"
       max-file: "3"
 ```
+
+# Installation
+
+`$ git clone https://github.com/zhquan/Q-DashMan.git`
+
+`$ cd Q-DashMan`
+
+`$ python3  manage.py migrate`
+
+`$ python3 manage.py makemigrations`
+
+`$ python3 manage.py runserver`
 
 # Modify `models.py`
 When you modify the `module.py` file, you have to delete the old database and create a new one.
