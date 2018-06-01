@@ -83,7 +83,7 @@ redis:
 
 mordred:
   restart: on-failure:5
-  image: bitergia/mordred:18.05-03
+  image: bitergia/mordred:18.05-02
   volumes:
     - <mordred_conf_path>:/home/bitergia/conf
     - <mordred_logs_path>:/home/bitergia/logs
@@ -101,6 +101,7 @@ mordred:
 
 # Modify `models.py`
 When you modify the `module.py` file, you have to delete the old database and create a new one.
+
 `$ python3 rm db.sqlite3`
 
 `$ python3 manage.py migrate`
