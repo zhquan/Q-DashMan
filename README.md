@@ -1,6 +1,9 @@
 # Q-DashMan
 Q-DashMan is a web application used to generate dashboards with metrics about a software's project development in an easy way. For that, we use Django (as development's framework of web applications) and GrimoireLab's tools (several tools to collect, analize and view metrics about software's development).
 
+An example of the dashboard created by Q-DashMan
+![Dashboard](/templates/static/img/tfm-kibana-git-1.png)
+    
 # Requirements
 * docker => 18.03.1-ce
 * docker-compose => 1.13.0
