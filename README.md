@@ -1,5 +1,5 @@
 # Q-DashMan
-Generating dashboard the simple way using GrimoireLab tools in a Django app.
+Q-DashMan is a web application used to generate dashboards with metrics about a software's project development in an easy way. For that, we use Django (as development's framework of web applications) and GrimoireLab's tools (several tools to collect, analize and view metrics about software's development).
 
 # Requirements
 * docker => 18.03.1-ce
