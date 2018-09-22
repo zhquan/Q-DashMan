@@ -17,7 +17,7 @@ Set up the projects file
 ![Projects](/templates/static/img/projects-add.png)
 Add data sources
 ![SetupAddDataSource](/templates/static/img/setup-add.png)
-Set up SirMordred setup file
+Set up SirMordred file
 ![SetupGeneral](/templates/static/img/setup-general.png)
 
 All the rest is completely automatic since Q-DashMan produces a dashboard hiding the difficult use of all GrimoireLab’s tools to the user.
