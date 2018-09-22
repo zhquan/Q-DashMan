@@ -11,7 +11,12 @@ GrimoireLab’s tools used are the following:
 
 Consequently, GrimoireLab gives you the tools you need. However, writing files set forMordred is difficult and boring and it forces you to let the machine access to the place where the analysis is going to happen due to you need to manage the set file and run the tools.
 
-In this part of the process is where Q-DashMan offers an alternative: an app who offers the generation of dashboards as a service. The user interface that it offers is very simple comparted with the files set by SirMordred, you’d only need to complete some files to specify the data source of the project you’re going to analyze.   All the rest is completely automatic since Q-DashMan produces a dashboard hiding the difficult use of all GrimoireLab’s tools to the user.
+In this part of the process is where Q-DashMan offers an alternative: an app who offers the generation of dashboards as a service. The user interface that it offers is very simple comparted with the files set by SirMordred, you’d only need to complete some files to specify the data source of the project you’re going to analyze.
+![Projects](/templates/static/img/projects-add.png)
+![SetupAddDataSource](/templates/static/img/setup-add.png)
+![SetupGeneral](/templates/static/img/setup-general.png)
+
+All the rest is completely automatic since Q-DashMan produces a dashboard hiding the difficult use of all GrimoireLab’s tools to the user.
 
 We used development web standard technologies to built Q-DashMan based on Django framework.  The tool is written in Python, it uses a database MariaDB and it can be deployed in a simple way by using Docker containers. The tool is easy to deploy and it’s being used as a trial in environments as preproduction to build dashboards in more than 10 different projects.
 
