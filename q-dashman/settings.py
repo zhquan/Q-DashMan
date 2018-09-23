@@ -50,7 +50,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'tfm.urls'
+ROOT_URLCONF = 'q-dashman.urls'
 
 TEMPLATES = [
     {
@@ -68,7 +68,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'tfm.wsgi.application'
+WSGI_APPLICATION = 'q-dashman.wsgi.application'
 
 
 # Database
