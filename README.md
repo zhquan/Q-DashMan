@@ -1,6 +1,8 @@
 # Q-DashMan
 Q-DashMan is a web application used to generate dashboards with metrics about a software's project development in an easy way. For that, we use Django (as development's framework of web applications) and GrimoireLab's tools (several tools to collect, analyze and view metrics about software's development).
 
+![SetupGeneral](/templates/static/img/grimoirelab-qdashman.png)
+
 Q-DashMan uses several GrimoireLab’s tools.  Its final goal is to export data from the systems where you develop and analyze the software to produce at the end a dashboard that shows interesting metrics in an interactive way.  Q-DashMan let specifying which ones are those systems for a specific project and manages the whole process till the dashboard is ready to work.
 
 GrimoireLab’s tools used are the following:
