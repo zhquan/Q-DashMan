@@ -34,48 +34,56 @@ An example of the dashboard created by Q-DashMan
 # Requirements
 * docker => 18.03.1-ce
 * docker-compose => 1.13.0
-* Django => 2.0.5
-* requests => 2.18.4
+* beautifulsoup4 => 4.6.3
 * bs4 => 0.0.1
+* certifi => 2018.11.29
+* chardet => 3.0.4
+* Django => 2.0.5
+* idna => 2.7
+* pkg-resources => 0.0.0
+* pytz => 2018.7
+* PyYAML => 3.13
+* requests => 2.18.4
+* urllib3 => 1.24.1
+* yml => 0.0.1
 
 # Docker containers
 You must have an ElasticSearch, Kibana, and MariaDB running in a docker container before installing Q-DashMan.
 
-### ElasticSearch
+### ElasticSearch + Kibiter
 docker-compose.yml
 ```
 elasticsearch:
   restart: on-failure:5
-  image: elasticsearch:5.1.1
-  command: elasticsearch -Enetwork.bind_host=0.0.0.0 -Ehttp.max_content_length=2000mb
+  image: bitergia/elasticsearch:6.1.0
+  command: /elasticsearch/bin/elasticsearch -Enetwork.bind_host=0.0.0.0 -Ehttp.max_content_length=2000mb
   environment:
     - ES_JAVA_OPTS=-Xms2g -Xmx2g
-  expose:
-    - "9200"
+  ulimits:
+    nofile:
+      soft: 65536
+      hard: 65536
   ports:
     - "9200:9200"
   log_driver: "json-file"
   log_opt:
     max-size: "100m"
     max-file: "3"
-```
 
-### Kibana
-docker-compose.yml
-```
-kibana:
+kibiter:
   restart: on-failure:5
-  image: kibana:5.1.1
+  image: bitergia/kibiter:optimized-v6.1.4-2
   environment:
-    - NODE_OPTIONS=--max-old-space-size=1000
+    - PROJECT_NAME=TEST
+    - NODE_OPTIONS=--max-old-space-size=1200
+    - ELASTICSEARCH_URL=http://elasticsearch:9200
   links:
     - elasticsearch
   ports:
     - "5601:5601"
   log_driver: "json-file"
   log_opt:
-      max-size: "100m"
-      max-file: "3"
+    max-size: "100
 ```
 
 ### MariaDB
@@ -95,43 +103,13 @@ mariadb:
       max-size: "10
 ```
 
-### Mordred
-Remember the path of this docker-compose.yml
-
-<mordred_conf_path>: The same path as docker-compose.yml
-
-At <mordred_conf_path> create the folder sources: `$ mkdir sources`
-
-<mordred_logs_path>: <mordred_conf_path>/logs
-
-docker-compose.yml
-```
-redis:
-  image: redis
-
-mordred:
-  restart: on-failure:5
-  image: bitergia/mordred:18.05-02
-  volumes:
-    - <mordred_conf_path>:/home/bitergia/conf
-    - <mordred_logs_path>:/home/bitergia/logs
-  links:
-    - redis
-  external_links:
-    - elasticsearch_elasticsearch_1:elasticsearch
-    - mariadb_mariadb_1:mariadb
-
-  log_driver: "json-file"
-  log_opt:
-      max-size: "100m"
-      max-file: "3"
-```
-
 # Installation
 
 `$ git clone https://github.com/zhquan/Q-DashMan.git`
 
 `$ cd Q-DashMan`
+
+`$ pip install -r requirements.txt`
 
 `$ python3 manage.py migrate --run-syncdb`
 
@@ -145,6 +123,8 @@ mordred:
 When you modify the `module.py` file, you have to delete the old database and create a new one.
 
 `$ python3 rm db.sqlite3`
+
+`$ python3 manage.py migrate --run-syncdb`
 
 `$ python3 manage.py migrate`
 
