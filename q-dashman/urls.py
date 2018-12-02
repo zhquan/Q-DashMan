@@ -40,7 +40,9 @@ urlpatterns = [
     url(r'^generate_stop', views.dash_stop),
     url(r'^conf_setup', views.conf_setup),
     url(r'^conf_backend', views.conf_backend),
+    url(r'^conf_study', views.conf_study),
     url(r'^rm_backend', views.rm_backend),
+    url(r'^rm_study', views.rm_study),
     url(r'^admin/', admin.site.urls),
 
     #url(r'^posts$', views.projects_upload),

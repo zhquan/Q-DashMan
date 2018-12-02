@@ -44,6 +44,21 @@ class Backends(models.Model):
         return self.name
 
 
+class Studies(models.Model):
+    name = models.CharField(max_length=200)
+    in_index = models.CharField(max_length=200)
+    out_index = models.CharField(max_length=200)
+    data_source = models.CharField(max_length=200)
+    contribs_field = models.CharField(max_length=200)
+    timeframe_field = models.CharField(max_length=200)
+    sort_on_field = models.CharField(max_length=200)
+    no_incremental = models.CharField(max_length=200)
+    seconds = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.name
+
+
 class Setup(models.Model):
     name = models.CharField(max_length=200, default='setup')
     short_name = models.CharField(max_length=200, unique=True)
@@ -51,6 +66,9 @@ class Setup(models.Model):
     min_update_delay = models.CharField(max_length=200)
     debug = models.CharField(max_length=200)
     logs_dir = models.CharField(max_length=200)
+    bulk_size = models.CharField(max_length=200)
+    scroll_size = models.CharField(max_length=200)
+    aliases_file = models.CharField(max_length=200)
     projects_file = models.CharField(max_length=200)
     es_collection = models.CharField(max_length=200)
     es_enrichment = models.CharField(max_length=200)
@@ -71,5 +89,13 @@ class Setup(models.Model):
     bots_names = models.CharField(max_length=200)
     unaffiliated_group = models.CharField(max_length=200)
     affiliate = models.CharField(max_length=200)
+    kibiter_time_from = models.CharField(max_length=200)
+    kibiter_default_index = models.CharField(max_length=200)
+    kibiter_url = models.CharField(max_length=200)
+    kibiter_version = models.CharField(max_length=200)
+    community = models.CharField(max_length=200)
+    gitlab_issues = models.CharField(max_length=200)
+    gitlab_merges = models.CharField(max_length=200)
     backends = models.ManyToManyField(Backends)
+    studies = models.ManyToManyField(Studies)
     

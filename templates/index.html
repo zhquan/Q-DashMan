@@ -195,12 +195,17 @@
 				<div class="col-md-4">
 					<div class="about">
 						<i class="fa fa-cogs"></i>
-						<h3>Mordred setup</h3>
-						<button class="white-btn" data-toggle="modal" data-target="#setup_settings">Settings</button>
-                        <button class="white-btn" data-toggle="modal" data-target="#setup_add_ds">Add Data Source</button>
-                        <button class="white-btn" data-toggle="modal" data-target="#setup_rm_ds">Remove Data Source</button>
-                        <button class="white-btn" data-toggle="modal" data-target="#setup_import">Import</button>
-                        <button class="white-btn" data-toggle="modal" data-target="#setup_show">Show</button>
+						<h3>SirMordred Setup</h3>
+                        <P>
+                            SirMordred <o>                                                  </o>rchestration setup
+                        </P>
+                        <span title="General Setup" data-toggle="tooltip" data-placement="top"><button class="white-btn" data-toggle="modal" data-target="#setup_settings">Settings</button></span>
+                        <span title="Add Data Source" data-toggle="tooltip" data-placement="top"><button class="white-btn" data-toggle="modal" data-target="#setup_add_ds">Add DS</button></span>
+                        <span title="Add Study" data-toggle="tooltip" data-placement="top"><button class="white-btn" data-toggle="modal" data-target="#setup_add_study">Add Study</button></span>
+                        <span title="Remove Data Source" data-toggle="tooltip" data-placement="top"><button class="white-btn" data-toggle="modal" data-target="#setup_rm_ds">RM DS</button></span>
+                        <span title="Remove Study" data-toggle="tooltip" data-placement="top"><button class="white-btn" data-toggle="modal" data-target="#setup_rm_study">RM Study</button></span>
+                        <span title="Import setup.cfg" data-toggle="tooltip" data-placement="top"><button class="white-btn" data-toggle="modal" data-target="#setup_import">Import</button></span>
+                        <span title="Show setup.cfg" data-toggle="tooltip" data-placement="top"><button class="white-btn" data-toggle="modal" data-target="#setup_show">Show</button></span>
 					</div>
 				</div>
                 
@@ -267,6 +272,47 @@
                 </div>
                 <!-- /setup_add_ds -->
 
+                <!-- setup_study -->
+				<div class="modal fade" id="setup_add_study" tabindex="-1" role="dialog" aria-labelledby="setup_studyLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="setup_studyLabel">Add Study</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="conf_study" action="/conf_study" method="post" enctype="multipart/form-data" align="left">
+                                {% csrf_token %}
+                                <div class ="form-group">
+                                    <label> Select Study</label>
+                                    <select class ="form-control" name="s_study">'
+                                        {{studies|safe}}
+                                    </select>
+                                    <select class ="form-control" name="s_data_source_study">'
+                                        {{data_sources|safe}}
+                                    </select>
+                                </div>
+                                <input id="s_in_index" type="text" name="s_in_index" placeholder="In Index *" required="required">
+                                <input id="s_out_index" type="text" name="s_out_index" placeholder="Out Index *" required="required">
+                                <input id="s_data_source_s" type="text" name="s_data_source_s" placeholder="Data Source">
+                                <input id="s_contribs_field" type="text" name="s_contribs_field" placeholder="Contribs Field">
+                                <input id="s_timeframe_field" type="text" name="s_timeframe_field" placeholder="Time Frame Field">
+                                <input id="s_sort_on_field" type="text" name="s_sort_on_field" placeholder="Sort On Field">
+                                <input id="s_no_incremental" type="text" name="s_no_incremental" placeholder="No Incremental">
+                                <input id="s_seconds" type="text" name="s_seconds" placeholder="Seconds">
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="submit" form="conf_study" class="btn btn-primary">Add</button>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /setup_study -->
+
                 <!-- setup_rm_ds -->
 				<div class="modal fade" id="setup_rm_ds" tabindex="-1" role="dialog" aria-labelledby="setup_rm_dsLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
@@ -291,6 +337,31 @@
                     </div>
                 </div>
                 <!-- /setup_rm_ds -->
+
+                 <!-- setup_rm_study -->
+				<div class="modal fade" id="setup_rm_study" tabindex="-1" role="dialog" aria-labelledby="setup_rm_dsLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="setup_rm_studyLabel">Remove Study</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="rm_study" action="/rm_study" method="post" enctype="multipart/form-data" align="left">
+                                {% csrf_token %}
+                                {{rm_study|safe}}
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="submit" form="rm_study" class="btn btn-primary">Remove</button>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /setup_rm_study -->
                 
                 <!-- setup_show -->
                 <div class="modal fade" id="setup_show" tabindex="-1" role="dialog" aria-labelledby="setup_showLabel" aria-hidden="true">
@@ -413,11 +484,14 @@
 					<div class="about">
 						<i class="fa fa-cog"></i>
 						<h3>Projects file</h3>
+                        <p>
+                            Projects that you want to track
+                        </p>
                         <br>
-						<button class="white-btn" data-toggle="modal" data-target="#projects_add">Add</button>
-                        <button class="white-btn" data-toggle="modal" data-target="#projects_rm">Remove</button>
-                        <button class="white-btn" data-toggle="modal" data-target="#projects_import">Import</button>
-                        <button class="white-btn" data-toggle="modal" data-target="#projects_show">Show</button>
+                        <span title="Add projects" data-toggle="tooltip" data-placement="top"><button class="white-btn" data-toggle="modal" data-target="#projects_add">Add</button></span>
+                        <span title="Remove projects" data-toggle="tooltip" data-placement="top"><button class="white-btn" data-toggle="modal" data-target="#projects_rm">Remove</button></span>
+                        <span title="Import projects.json" data-toggle="tooltip" data-placement="top"><button class="white-btn" data-toggle="modal" data-target="#projects_import">Import</button></span>
+                        <span title="Show projects.json" data-toggle="tooltip" data-placement="top"><button class="white-btn" data-toggle="modal" data-target="#projects_show">Show</button></span>
 					</div>
 				</div>
 
